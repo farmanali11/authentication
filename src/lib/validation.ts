@@ -31,11 +31,12 @@ export const registerSchema = z.object({
 
 export const loginSchema = z.object({
   email: z
-    .string({ required_error: "Email is required" })
+    .string()
+    .min(1, "Email is required")
     .email("Please enter a valid email address")
     .toLowerCase()
     .trim(),
-  password: z.string({ required_error: "Password is required" }).min(1),
+  password: z.string().min(1, "Password is required"),
 });
 
 export type RegisterInput = z.infer<typeof registerSchema>;
