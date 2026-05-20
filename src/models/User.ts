@@ -33,7 +33,7 @@ const UserSchema = new Schema<IUserDocument>(
         "Please enter a valid email address",
       ],
     },
-
+    
     password: {
       type: String,
       required: [true, "Password is required"],
